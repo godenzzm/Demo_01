@@ -1,35 +1,48 @@
-﻿using UnityEngine;
+﻿using UnityEditor;
+using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 
 [ExecuteInEditMode]
+//[InitializeOnLoad]
 public class Hexagon : MonoBehaviour 
 {
     public List<Hexagon> NeighbourList;    
 
     [SerializeField]
-    private float Radius = 50; 
+    private float Radius = 50/40f; 
 
     private bool IsAutoEmbedInEditor = true;
-    private Vector3[] m_NeighbourPositions;
+    public Vector3[] m_NeighbourPositions;
+
+	public bool IsEditorFinish = false;
+
+
 
     void Awake() 
     {
+		Debug.Log ("Hexagon Awake !!!");
         InitMember();
     }
 
 	// Use this for initialization
 	void Start () 
     {
+		Debug.Log ("Hexagon Start !!!");
         RandomColor();
-        AutoEmbedInEditor();
-        InitNeighbourPosition();
+        //InitNeighbourPosition();
 	}
-	
+
+	void OnEnable()
+	{
+		Debug.Log ("Hexagon OnEnabled !!!");
+	}
+
 	// Update is called once per frame
 	void Update () 
     {
-        
+		Debug.Log ("Hexagon Update !!!");
+		//AdjustDragPositionInEdit ();
 	}
 
     void InitMember() 
@@ -37,34 +50,10 @@ public class Hexagon : MonoBehaviour
         NeighbourList = new List<Hexagon>();
     }
 
-    void AutoEmbedInEditor () 
-    {
-        if (!IsAutoEmbedInEditor) return;
-
-        Hexagon[] hexagons = FindObjectsOfType<Hexagon>();
-
-        float shortDis_1 = 99999;
-        int index = 0;
-
-        for (int i = 0; i < hexagons.Length; ++i) 
-        {
-            float dis = Vector3.Distance(transform.position, hexagons[i].transform.position);
-
-            if (shortDis_1 > dis && hexagons[i].IsNeighbourAvailable()) 
-            { 
-                shortDis_1 = dis;
-                index = i;
-            }
-        }
-
-        if (index < hexagons.Length)
-        {
-            EmbedAsNeighbour(hexagons[index]);
-        }
-    }
-
     void RandomColor() 
     {
+		if (IsAutoEmbedInEditor) return;
+
         Renderer renderer = GetComponent<Renderer>();
 
         if (null != renderer && null != renderer.material) 
@@ -77,34 +66,69 @@ public class Hexagon : MonoBehaviour
         }
     }
 
-    void EmbedAsNeighbour (Hexagon neighbour) 
-    {
-        Hexagon[] hexagons = FindObjectsOfType<Hexagon>();
-        
-    }
-
     //检测是否周围有邻居
-    bool IsNeighbourAvailable() 
+    public bool IsNeighbourAvailable() 
     {
         bool ret = false;
 
-        if (null != m_NeighbourPositions && m_NeighbourPositions.Length < 6) ret = true;
+		if (null != NeighbourList && NeighbourList.Count < 6) ret = true;
 
         return ret;
     }
 
-    void InitNeighbourPosition() 
+    public void InitNeighbourPosition() 
     {
         float x = transform.position.x;
         float y = transform.position.y;
 
         m_NeighbourPositions = new Vector3[6];
 
-        m_NeighbourPositions[0] = new Vector3(x, y + Mathf.Sqrt(3f) * Radius);
-        m_NeighbourPositions[1] = new Vector3(x + 1.5f * Radius, y + Mathf.Sqrt(3f) / 2f * Radius);
-        m_NeighbourPositions[2] = new Vector3(x + 1.5f * Radius, y - Mathf.Sqrt(3f) / 2f * Radius);
-        m_NeighbourPositions[3] = new Vector3(x, y - Mathf.Sqrt(3f) * Radius);
-        m_NeighbourPositions[4] = new Vector3(x - 1.5f * Radius, y - Mathf.Sqrt(3f) / 2f * Radius);
-        m_NeighbourPositions[5] = new Vector3(x - 1.5f * Radius, y + Mathf.Sqrt(3f) / 2f * Radius);
+        m_NeighbourPositions[0] = new Vector3(x, 				 0, y + Mathf.Sqrt(3f) * Radius);
+        m_NeighbourPositions[1] = new Vector3(x + 1.5f * Radius, 0, y + Mathf.Sqrt(3f) / 2f * Radius);
+        m_NeighbourPositions[2] = new Vector3(x + 1.5f * Radius, 0, y - Mathf.Sqrt(3f) / 2f * Radius);
+        m_NeighbourPositions[3] = new Vector3(x, 				 0, y - Mathf.Sqrt(3f) * Radius);
+        m_NeighbourPositions[4] = new Vector3(x - 1.5f * Radius, 0, y - Mathf.Sqrt(3f) / 2f * Radius);
+        m_NeighbourPositions[5] = new Vector3(x - 1.5f * Radius, 0, y + Mathf.Sqrt(3f) / 2f * Radius);
+
+		Debug.Log ("Hexagon InitNeighbourPosition !!!");
     }
+
+	void AdjustDragPositionInEdit ()
+	{
+		if (!IsAutoEmbedInEditor) return;
+
+		transform.position = new Vector3 (transform.position.x, 0, transform.position.z);
+	}
+
+	#region set/get
+	public Vector3[] NeighbourPositions
+	{
+		get
+		{ 
+			return m_NeighbourPositions;
+		}
+	}
+		
+	#endregion
+
+	void OnDestory()
+	{
+		Debug.Log ("Hexagon OnDestroy !!!");
+
+		Hexagon[] hexagons = FindObjectsOfType<Hexagon> ();
+
+		for (int i = 0; i < hexagons.Length; ++i) 
+		{
+			if (hexagons [i].Equals (this)) continue;
+
+			foreach (Hexagon hex in hexagons[i].NeighbourList) 
+			{
+				if (hex.Equals(this))
+				{
+					hexagons[i].NeighbourList.Remove (hex);
+					break;		
+				}
+			}
+		}
+	}
 }
