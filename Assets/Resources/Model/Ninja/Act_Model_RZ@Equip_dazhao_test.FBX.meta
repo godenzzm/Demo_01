@@ -1,0 +1,213 @@
+fileFormatVersion: 2
+guid: 669230c5a80abee4ea6d0cec9bc4a0ae
+timeCreated: 1451551060
+licenseType: Pro
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: Bip001
+    100004: Bip001 Head
+    100006: Bip001 HeadNub
+    100008: Bip001 L Calf
+    100010: Bip001 L Clavicle
+    100012: Bip001 L Finger0
+    100014: Bip001 L Finger01
+    100016: Bip001 L Finger0Nub
+    100018: Bip001 L Finger1
+    100020: Bip001 L Finger11
+    100022: Bip001 L Finger1Nub
+    100024: Bip001 L Foot
+    100026: Bip001 L Forearm
+    100028: Bip001 L Hand
+    100030: Bip001 L Thigh
+    100032: Bip001 L Toe0
+    100034: Bip001 L Toe0Nub
+    100036: Bip001 L UpperArm
+    100038: Bip001 L UpperArm_Ctrl
+    100040: Bip001 Neck
+    100042: Bip001 Pelvis
+    100044: Bip001 R Calf
+    100046: Bip001 R Clavicle
+    100048: Bip001 R Finger0
+    100050: Bip001 R Finger01
+    100052: Bip001 R Finger0Nub
+    100054: Bip001 R Finger1
+    100056: Bip001 R Finger11
+    100058: Bip001 R Finger1Nub
+    100060: Bip001 R Foot
+    100062: Bip001 R Forearm
+    100064: Bip001 R Hand
+    100066: Bip001 R Thigh
+    100068: Bip001 R Toe0
+    100070: Bip001 R Toe0Nub
+    100072: Bip001 R UpperArm
+    100074: Bip001 R UpperArm_Ctrl
+    100076: Bip001 Spine
+    100078: Bip001 Spine1
+    100080: Bone001
+    100082: Bone002
+    100084: Bone003
+    100086: Bone004
+    100088: Bone005
+    100090: Bone006
+    100092: Bone007
+    100094: Bone008
+    100096: Bone009
+    100098: Bone010
+    100100: Bone011
+    100102: Camera001
+    100104: Camera001.Target
+    100106: head_toukui
+    100108: Model_RZ_Avatar_double1_01
+    100110: Model_RZ_Avatar_face_001
+    100112: Model_RZ_Equip_hair_001
+    100114: Model_RZ_Equip_low_01
+    100116: Model_RZ_Equip_shoes_01
+    100118: Model_RZ_Equip_up_002
+    100120: Model_RZ_Equip_up_01
+    100122: Model_RZ_Equip_up_01 1
+    100124: Root
+    400000: //RootNode
+    400002: Bip001
+    400004: Bip001 Head
+    400006: Bip001 HeadNub
+    400008: Bip001 L Calf
+    400010: Bip001 L Clavicle
+    400012: Bip001 L Finger0
+    400014: Bip001 L Finger01
+    400016: Bip001 L Finger0Nub
+    400018: Bip001 L Finger1
+    400020: Bip001 L Finger11
+    400022: Bip001 L Finger1Nub
+    400024: Bip001 L Foot
+    400026: Bip001 L Forearm
+    400028: Bip001 L Hand
+    400030: Bip001 L Thigh
+    400032: Bip001 L Toe0
+    400034: Bip001 L Toe0Nub
+    400036: Bip001 L UpperArm
+    400038: Bip001 L UpperArm_Ctrl
+    400040: Bip001 Neck
+    400042: Bip001 Pelvis
+    400044: Bip001 R Calf
+    400046: Bip001 R Clavicle
+    400048: Bip001 R Finger0
+    400050: Bip001 R Finger01
+    400052: Bip001 R Finger0Nub
+    400054: Bip001 R Finger1
+    400056: Bip001 R Finger11
+    400058: Bip001 R Finger1Nub
+    400060: Bip001 R Foot
+    400062: Bip001 R Forearm
+    400064: Bip001 R Hand
+    400066: Bip001 R Thigh
+    400068: Bip001 R Toe0
+    400070: Bip001 R Toe0Nub
+    400072: Bip001 R UpperArm
+    400074: Bip001 R UpperArm_Ctrl
+    400076: Bip001 Spine
+    400078: Bip001 Spine1
+    400080: Bone001
+    400082: Bone002
+    400084: Bone003
+    400086: Bone004
+    400088: Bone005
+    400090: Bone006
+    400092: Bone007
+    400094: Bone008
+    400096: Bone009
+    400098: Bone010
+    400100: Bone011
+    400102: Camera001
+    400104: Camera001.Target
+    400106: head_toukui
+    400108: Model_RZ_Avatar_double1_01
+    400110: Model_RZ_Avatar_face_001
+    400112: Model_RZ_Equip_hair_001
+    400114: Model_RZ_Equip_low_01
+    400116: Model_RZ_Equip_shoes_01
+    400118: Model_RZ_Equip_up_002
+    400120: Model_RZ_Equip_up_01
+    400122: Model_RZ_Equip_up_01 1
+    400124: Root
+    4300000: Model_RZ_Avatar_face_001
+    4300002: Model_RZ_Equip_hair_001
+    4300004: Model_RZ_Equip_shoes_01
+    4300006: Model_RZ_Equip_low_01
+    4300008: Model_RZ_Equip_up_01
+    4300010: Model_RZ_Equip_up_002
+    4300012: Model_RZ_Avatar_double1_01
+    7400000: Take 001
+    9500000: //RootNode
+    13700000: Model_RZ_Avatar_double1_01
+    13700002: Model_RZ_Avatar_face_001
+    13700004: Model_RZ_Equip_hair_001
+    13700006: Model_RZ_Equip_low_01
+    13700008: Model_RZ_Equip_shoes_01
+    13700010: Model_RZ_Equip_up_002
+    13700012: Model_RZ_Equip_up_01 1
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleRotations: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 0.4
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

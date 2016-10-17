@@ -1,4 +1,7 @@
-﻿using UnityEditor;
+﻿#if UNITY_EDITOR
+using UnityEditor;
+#endif
+
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
@@ -21,27 +24,27 @@ public class Hexagon : MonoBehaviour
 
     void Awake() 
     {
-		Debug.Log ("Hexagon Awake !!!");
+		//Debug.Log ("Hexagon Awake !!!");
         InitMember();
     }
 
 	// Use this for initialization
 	void Start () 
     {
-		Debug.Log ("Hexagon Start !!!");
-        RandomColor();
+		//Debug.Log ("Hexagon Start !!!");
+        //RandomColor();
         //InitNeighbourPosition();
 	}
 
 	void OnEnable()
 	{
-		Debug.Log ("Hexagon OnEnabled !!!");
+		//Debug.Log ("Hexagon OnEnabled !!!");
 	}
 
 	// Update is called once per frame
 	void Update () 
     {
-		Debug.Log ("Hexagon Update !!!");
+		//Debug.Log ("Hexagon Update !!!");
 		//AdjustDragPositionInEdit ();
 	}
 
@@ -50,10 +53,8 @@ public class Hexagon : MonoBehaviour
         NeighbourList = new List<Hexagon>();
     }
 
-    void RandomColor() 
+    public void RandomColor() 
     {
-		if (IsAutoEmbedInEditor) return;
-
         Renderer renderer = GetComponent<Renderer>();
 
         if (null != renderer && null != renderer.material) 
