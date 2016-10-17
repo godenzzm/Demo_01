@@ -14,11 +14,12 @@ public class UnitController : Controller
 	void Start () {
 	
 	}
-	
-	// Update is called once per frame
-	void Update () {
-        
-	}
+
+    // Update is called once per frame
+    void Update()
+    {
+        base.Update();
+    }
 
     public void Attack()
     {
@@ -26,5 +27,15 @@ public class UnitController : Controller
         {
             m_Animator.SetTrigger ("Attack_01");
         }
+    }
+
+    public override void BeginSlerpRotation(Quaternion targetQuaternion, Vector3 originalForward)
+    {
+        base.BeginSlerpRotation(targetQuaternion, originalForward);
+    }
+
+    public override void MoveTo(Vector3 TargetPosition)
+    {
+        base.MoveTo(TargetPosition);
     }
 }
