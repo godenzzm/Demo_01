@@ -3,7 +3,7 @@ using System.Collections;
 
 public class Controller : MonoBehaviour
 {
-
+    #region physical data
     protected Quaternion m_SlerpRotationTarget; //平滑转向目标
     protected bool m_IsSlerpRotation = false; //是否进行平滑转向
     protected int m_SlerpRotationCount = 0;
@@ -11,11 +11,17 @@ public class Controller : MonoBehaviour
     protected bool m_IsMoveToTarget = false;
     protected Vector3 m_TargetPosition;
     protected float m_MoveSpeed = 10;
+    #endregion
+
+    #region gameplay data
+
+    #endregion
 
     // Use this for initialization
-    void Start () {
-	
-	}
+    void Start ()
+    {
+
+    }
 	
 	// Update is called once per frame
 	protected void Update ()
@@ -64,4 +70,8 @@ public class Controller : MonoBehaviour
         Vector3 dir = (m_TargetPosition - transform.position).normalized;
         transform.position += dir * m_MoveSpeed * Time.deltaTime;
     }
+
+    #region get set
+    
+    #endregion
 }

@@ -5,10 +5,10 @@ using System.Collections;
 public class GameInput : MonoBehaviour 
 {
 	public Image MouseGO;
-    public float MoveEditPercent = 0.98f;
+    public float MoveEditPercent = 0.95f;
     public GameObject Prefab_FX_Click;
 
-    public UnitController TargetUnit;
+    public Controller TargetUnit;
 
     private int LayerMaskFloor;
 
@@ -74,6 +74,11 @@ public class GameInput : MonoBehaviour
         {
             GameManager.Instance.MainCamera.Move(Time.deltaTime * new Vector3(ScrollX, 0, ScrollY));
         }
+
+        if (Input.mouseScrollDelta.y != 0)
+        {
+            GameManager.Instance.MainCamera.ZoomInOut(Time.deltaTime * Input.mouseScrollDelta.y);
+        }
     }
 
     void InputMouseClick()
@@ -100,7 +105,5 @@ public class GameInput : MonoBehaviour
                 }
             }
         }
-        
-            
     }
 }

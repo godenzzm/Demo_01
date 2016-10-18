@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private MainCamera m_MainCamera;
 
+    private IGameMode m_GameMode;
 	void Awake ()
 	{
 		DontDestroyOnLoad (this);
@@ -16,14 +17,22 @@ public class GameManager : MonoBehaviour
 	// Use this for initialization
 	void Start ()
     {
-       
-	}
+        m_GameMode = new GameModeAlpha();
+    }
 	
 	// Update is called once per frame
-	void Update () {
-	
+	void Update ()
+    {
+        GameRounding();
 	}
 
+    //游戏主回合轮询
+    void GameRounding()
+    {
+        m_GameMode.Update();
+    }
+
+    #region get set
     public static GameManager Instance
     {
         get
@@ -40,4 +49,5 @@ public class GameManager : MonoBehaviour
     {
         get { return m_MainCamera; }
     }
+    #endregion
 }
