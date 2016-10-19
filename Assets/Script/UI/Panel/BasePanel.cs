@@ -64,7 +64,7 @@ public class BasePanel : MonoBehaviour
 
     void OnDestroy()
     {
-        UIManager.Instance.MainCanvas.RemovePanel(m_PanelId);
+        //UIManager.Instance.MainCanvas.RemovePanel(m_PanelId);
     }
 
     #region set get

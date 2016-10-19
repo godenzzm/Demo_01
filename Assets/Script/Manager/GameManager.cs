@@ -9,6 +9,8 @@ public class GameManager : MonoBehaviour
     private MainCamera m_MainCamera;
 
     private IGameMode m_GameMode;
+    private GameInput m_GameInput;
+
 	void Awake ()
 	{
 		DontDestroyOnLoad (this);
@@ -48,6 +50,12 @@ public class GameManager : MonoBehaviour
     public MainCamera MainCamera
     {
         get { return m_MainCamera; }
+    }
+
+    public GameInput GameInput
+    {
+        get { return m_GameInput; }
+        set { m_GameInput = value; }
     }
     #endregion
 }

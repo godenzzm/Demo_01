@@ -4,7 +4,7 @@ using System.Collections;
 
 public class GameInput : MonoBehaviour 
 {
-	public Image MouseGO;
+	public GameObject MouseGO;
     public float MoveEditPercent = 0.95f;
     public GameObject Prefab_FX_Click;
 
@@ -18,8 +18,14 @@ public class GameInput : MonoBehaviour
     }
 
 	// Use this for initialization
-	void Start () {
-	
+	IEnumerator Start ()
+    {
+        while (null == GameManager.Instance)
+        {
+            yield return null;
+        }
+
+        GameManager.Instance.GameInput = this;
 	}
 
 	// Update is called once per frame

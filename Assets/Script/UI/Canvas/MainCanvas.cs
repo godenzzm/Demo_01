@@ -19,13 +19,14 @@ public class MainCanvas : MonoBehaviour
     void Awake()
     {
         m_UIPanels = new Dictionary<int, BasePanel>();
-
         m_UIPanelIds = new Dictionary<string, int>();
-        //m_UIPanelIds.Add(Config.UI_NAME_PANEL_PLAYER_BATTLE_STATE_PANEL, 0);
-        //m_UIPanelIds.Add(Config.UI_NAME_PANEL_ENEMY_BATTLE_STATE_PANEL, 0);
+
     }
 
-    void Start() { }
+    void Start()
+    {
+        LoadCursor();
+    }
 
     void Update() { }
 
@@ -47,6 +48,20 @@ public class MainCanvas : MonoBehaviour
         uiLayer.transform.SetSiblingIndex(_index);
 
         //Debug.Log("SetPanelLayer index:" + _index);
+    }
+
+    public void LoadCursor()
+    {
+        Cursor.visible = false;
+        GameObject cursorGO = ResourceManager.Instance.LoadFullPathResource("Prefab/UI/Cursor");
+        if (null != cursorGO)
+        {
+            cursorGO.transform.SetParent(m_RootPanel.transform);
+            cursorGO.transform.localScale = Vector3.one;
+            cursorGO.transform.localPosition = Vector3.zero;
+
+            GameManager.Instance.GameInput.MouseGO = cursorGO;
+        }
     }
 
     #region UI资源管理
