@@ -37,6 +37,7 @@ public class GameInput : MonoBehaviour
 
     void InputMouseMove()
     {
+        if (null == MouseGO) return;
         //Debug.Log("ScreenSize:" + Screen.width + " " + Screen.height + " Mouse Position:" + Input.mousePosition.x + " " + Input.mousePosition.y);
         //Debug.Log (MouseGO.transform.localPosition);
 

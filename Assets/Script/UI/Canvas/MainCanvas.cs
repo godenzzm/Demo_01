@@ -25,7 +25,7 @@ public class MainCanvas : MonoBehaviour
 
     void Start()
     {
-        LoadCursor();
+        StartCoroutine( LoadCursor() );
     }
 
     void Update() { }
@@ -50,8 +50,13 @@ public class MainCanvas : MonoBehaviour
         //Debug.Log("SetPanelLayer index:" + _index);
     }
 
-    public void LoadCursor()
+    IEnumerator LoadCursor()
     {
+        while (null == GameManager.Instance.GameInput)
+        {
+            yield return null;
+        }
+        
         Cursor.visible = false;
         GameObject cursorGO = ResourceManager.Instance.LoadFullPathResource("Prefab/UI/Cursor");
         if (null != cursorGO)
